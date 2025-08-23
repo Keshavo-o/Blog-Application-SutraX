@@ -1,0 +1,16 @@
+There are a few things you need to keep in mind while uploading on AWS
+1.) Change PORT to environment variables as on cloud there are many ports running and overlapping so we cant define a specific port number by ourselves
+    I cant hardcode PORT number , server will provide at runtime so we need to use it as dynammic variables 
+    Environment variables: set by cloud
+        ie : In your console if you "export myname=Piyush"
+             an environment variable is created as myname . 
+             you can access it as process.env.myname
+        process.env.PORT is provided by cloud
+2.) same thing with MOngo DB link
+    as process.env.MONGO_URL
+3.) Make sure your scripts have start script in in package.json>scripts
+4.) index.js (the main file) should be renamed as app.js everywhre in package also
+5.) You can also create a .env local file to give local variables there
+     But you need to install a package to make it run : npm install dotenv
+     And in app .js acquiring the package as : require("dotenv").config(); (ON TOP)
+6.) NOW GO TO console.aws.com and can proceed further
