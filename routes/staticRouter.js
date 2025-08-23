@@ -46,14 +46,20 @@ async function attachUser(req, res, next) {
 
 router.get("/", async (req, res) => {
   try {
+    const token = req.cookies.uid;
+    const userData = verifyUser(token);
+    if (!userData) {
+        return res.redirect("/login");
+    }
+    const username = userData.username;
+    req.user = await user.findOne({ username: userData.username });
     // Get a random sample of 5 blogs
     const blogs = await blog.aggregate([{ $sample: { size: 10 } }]);
-
     // Render home page and pass blogs
-    res.render("home", { blogs });
+    res.render("home", { blogs, user: username });
   } catch (err) {
     console.error("Error fetching blogs:", err);
-    res.render("home", { blogs: [] }); // fallback: empty array
+    res.render("home", { blogs: [], user: null }); // fallback: empty array
   }
 });
 
@@ -80,12 +86,13 @@ router.post("/upload_profile_pic", attachUser, upload.single("profile_pic"), asy
     res.redirect("/userprofile");
 });
 router.get("/users", async (req, res) => {
-    res.render("users",);
+    const users = await user.find({});
+    res.render("users", { users });
 });
 router.get("/users/:username", async (req, res) => {
     const userDatatemp = await user.findOne({ username: req.params.username });
     if (!userDatatemp) {
-        return res.render("users");
+        return res.render("usernamenotfound");
     }
     res.render("randomprofile", { user: userDatatemp });
 });
