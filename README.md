@@ -19,17 +19,17 @@ This project follows a **MVC (Model-View-Controller)** pattern with proper folde
 #### - Password encryption using cryptography - for enhanced security
 
 ## ⚙️ Installation & Setup
-### 1️⃣ Clone the repository
+#### 1️⃣ Clone the repository
 
-### 2️⃣ Install dependencies
+#### 2️⃣ Install dependencies
 npm install
 
-### 3️⃣ Start MongoDB
+#### 3️⃣ Start MongoDB
 
 Make sure MongoDB is running locally on port 27017.
 mongod
 
-### 4️⃣ Run the application
+#### 4️⃣ Run the application
 node index.js
 
 
