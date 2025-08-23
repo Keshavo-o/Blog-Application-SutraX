@@ -17,3 +17,21 @@ This project follows a **MVC (Model-View-Controller)** pattern with proper folde
 #### -  EJS **templating engine** for dynamic views
 #### -  Proper **404 - Not Found** handling
 #### - Password encryption using cryptography - for enhanced security
+
+## ⚙️ Installation & Setup
+### 1️⃣ Clone the repository
+
+### 2️⃣ Install dependencies
+npm install
+
+### 3️⃣ Start MongoDB
+
+Make sure MongoDB is running locally on port 27017.
+mongod
+
+### 4️⃣ Run the application
+node index.js
+
+
+Server will run at:
+👉 http://localhost:8000
