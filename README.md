@@ -6,7 +6,7 @@ This project follows a **MVC (Model-View-Controller)** pattern with proper folde
 
 ---
 
-## 🚀 Features
+## Features
 
 #### -  **Authentication** (Signup, Login, Logout)
 #### -  **Profile Management** (Profile Pictures)
