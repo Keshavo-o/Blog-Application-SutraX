@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile | SutraX</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Serif+Devanagari:wght@700&display=swap" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      color: #e6e6e6;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 5vh;
+    }
+
+    /* Navbar */
+    .navbar-custom {
+      background-color: rgba(20,20,20,0.9);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .navbar-custom .navbar-brand {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 1.8rem;
+      color: #ffffff;
+    }
+    .navbar-custom .navbar-brand:hover { color: #0d8ddb; }
+    .navbar-custom .nav-link {
+      color: #ccc;
+      font-weight: 500;
+      transition: 0.3s ease;
+    }
+    .navbar-custom .nav-link:hover {
+      color: #1D9BF0;
+      transform: scale(1.05);
+    }
+
+    /* Glass Card */
+    .glass-card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(25px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 25px;
+      padding: 3rem 2rem;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease;
+      margin-top: 3rem;
+    }
+    .glass-card:hover { transform: translateY(-5px); }
+
+    .sanskrit-logo {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 2.5rem;
+      color: #1D9BF0;
+      margin-bottom: 1rem;
+      text-shadow: 0 3px 12px rgba(29,155,240,0.4);
+    }
+
+    /* Profile Picture */
+    .profile-pic-container {
+      position: relative;
+      margin-bottom: 2rem;
+      display: inline-block;
+    }
+
+    .profile-pic {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #1D9BF0;
+      background-color: #111;
+      transition: box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .profile-pic:hover { box-shadow: 0 0 20px #1D9BF0; }
+
+    /* Upload Button */
+    .upload-btn {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: #1D9BF0;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(29,155,240,0.6);
+      font-size: 1.2rem;
+      color: #fff;
+    }
+    .upload-btn:hover {
+      background-color: #0d8ddb;
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(29,155,240,0.8);
+    }
+
+    /* Hide default file input */
+    .upload-form input[type="file"] {
+      display: none;
+    }
+
+    /* Form Inputs */
+    .form-label {
+      font-weight: 500;
+      color: #ccc;
+      text-align: left;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .form-control {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 12px;
+      color: #fff;
+      padding: 0.8rem;
+      margin-bottom: 1.2rem;
+      transition: all 0.3s ease;
+    }
+    .form-control:focus {
+      border-color: #1D9BF0;
+      box-shadow: 0 0 12px rgba(29,155,240,0.6);
+      background: #000;
+      color: #fff;
+    }
+
+    /* Update Button */
+    .btn-primary {
+      background-color: #1D9BF0;
+      border: none;
+      border-radius: 15px;
+      font-weight: 600;
+      padding: 0.9rem 1.8rem;
+      margin-top: 0.5rem;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: #0d8ddb;
+      transform: scale(1.05);
+      box-shadow: 0 6px 24px rgba(29,155,240,0.4);
+    }
+
+    /* Social Links */
+    .social-links {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .social-links a {
+      color: #1D9BF0;
+      font-size: 1.5rem;
+      transition: 0.3s ease;
+    }
+    .social-links a:hover { color: #0d8ddb; transform: scale(1.2); }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">सूत्रX</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon" style="color:#fff;"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/settings">Settings</a></li>
+          <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="glass-card">
+    <div class="sanskrit-logo">सूत्रX</div>
+    <h2 class="mb-4">User</h2>
+
+    <!-- Profile Picture -->
+    <div class="profile-pic-container">
+      <img src="<% if(user){ %><%= user.profilepic %><% } %>" alt="Profile Picture" class="profile-pic">
+      
+      <!-- Upload Button -->
+    </div>
+
+    <!-- User Info Form -->
+      <div class="text-start">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" name="username" value="<% if(user){ %><%= user.username %><% } %>" readonly required>
+      </div>
+      <div class="text-start">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" value="<% if(user){ %><%= user.email %><% } %>" readonly required>
+      </div>
+      <div class="text-start">
+        <label for="bio" class="form-label">Bio</label>
+        <textarea maxlength="160" class="form-control" id="bio" name="bio" rows="3" readonly placeholder="Write something about yourself..."><% if(user){ %><%= user.bio %><% } %></textarea>
+      </div>
+
+    <!-- Social Links -->
+    <div class="social-links">
+      <a href="#"><i class="bi bi-twitter"></i></a>
+      <a href="#"><i class="bi bi-linkedin"></i></a>
+      <a href="#"><i class="bi bi-github"></i></a>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

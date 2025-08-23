@@ -13,7 +13,7 @@ if(!foundUser){
   return res.render("login_page", { message: "Invalid username or password" });
 }
 const isPasswordValid=verifyPassword(password,foundUser.salt,foundUser.password);
-console.log(isPasswordValid);
+// console.log(isPasswordValid);
 if(isPasswordValid){
   const token=setUser(foundUser);
   res.cookie("uid",token);

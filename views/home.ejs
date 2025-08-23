@@ -38,7 +38,7 @@
       margin: 0 0.5rem;
       transition: color 0.2s;
     }
-    .nav-link:hover, .nav-link.active {
+    .nav-link:hover {
       color: #1D9BF0 !important;
     }
 
@@ -98,7 +98,7 @@
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">सूत्रX - SutraX</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -109,10 +109,13 @@
       <div class="collapse navbar-collapse" id="navbarContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link active" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/profile">Profile</a>
+            <a class="nav-link" href="/userprofile">Profile</a>
+          </li>  
+          <li class="nav-item">
+            <a class="nav-link active" href="/logout">Logout</a>
           </li>
         </ul>
       </div>
