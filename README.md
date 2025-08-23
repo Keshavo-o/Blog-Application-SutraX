@@ -35,3 +35,30 @@ node index.js
 
 Server will run at:
 👉 http://localhost:8000
+
+## ScreenShots:
+### Login Page
+<img width="1911" height="973" alt="image" src="https://github.com/user-attachments/assets/3fdfb8cc-404a-4d76-89bf-85f7c7e55900" />
+### SignUp Page
+<img width="1912" height="966" alt="image" src="https://github.com/user-attachments/assets/a8334c0d-2f98-406b-ac24-72e339ea7037" />
+### HomePage
+<img width="1919" height="973" alt="image" src="https://github.com/user-attachments/assets/e0d62d0d-5b36-44d9-8686-274c2f93e67b" />
+### Blogs Page
+<img width="1919" height="968" alt="image" src="https://github.com/user-attachments/assets/1c535f50-d06d-4389-8e35-fedefa5f3a7b" />
+### About Page
+<img width="1919" height="976" alt="image" src="https://github.com/user-attachments/assets/8cc771bc-6344-4bb6-b954-02c06ce43d24" />
+### Profile Page
+<img width="1919" height="974" alt="image" src="https://github.com/user-attachments/assets/1e87cc17-cf16-43bf-b656-550f64355cfa" />
+### UI settings Page
+<img width="1905" height="962" alt="image" src="https://github.com/user-attachments/assets/49bf02ff-399e-477b-a6c4-6409401b9d73" />
+### Add new Blog(Sutra)
+<img width="1915" height="962" alt="image" src="https://github.com/user-attachments/assets/8134298f-e957-46f0-92bd-f51d7aeb98cc" />
+### Blog by Blog_Id
+<img width="1919" height="969" alt="image" src="https://github.com/user-attachments/assets/de2d3ad5-22ee-4485-b04d-c8baf327ac01" />
+### Comment section
+<img width="1913" height="970" alt="image" src="https://github.com/user-attachments/assets/16dca3d7-e6b4-43a7-983e-e5e7b72c099f" />
+
+
+
+
+
