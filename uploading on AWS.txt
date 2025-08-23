@@ -2,7 +2,7 @@ There are a few things you need to keep in mind while uploading on AWS
 1.) Change PORT to environment variables as on cloud there are many ports running and overlapping so we cant define a specific port number by ourselves
     I cant hardcode PORT number , server will provide at runtime so we need to use it as dynammic variables 
     Environment variables: set by cloud
-        ie : In your console if you "export myname=Piyush"
+        ie : In your console if you "export myname=Keshav"
              an environment variable is created as myname . 
              you can access it as process.env.myname
         process.env.PORT is provided by cloud
