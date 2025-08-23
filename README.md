@@ -8,12 +8,12 @@ This project follows a **MVC (Model-View-Controller)** pattern with proper folde
 
 ## 🚀 Features
 
-### - 🔑 **Authentication** (Signup, Login, Logout)
-### - 👤 **Profile Management** (Profile Pictures)
-### - 📝 **Blog Management** (Add Blogs, Show Blogs, Upload Blog Images)
-### - 💬 **Comments** on Blogs
-### - 📂 **Static Assets** handling (Profile Pics, Blog Images, SutraX Logo)
-### - ⚡ Middleware-based **User Authentication**
-### - 🖼️ EJS **templating engine** for dynamic views
-### - 📌 Proper **404 - Not Found** handling
-### - Password encryption using cryptography - for enhanced security
+#### - 🔑 **Authentication** (Signup, Login, Logout)
+#### - 👤 **Profile Management** (Profile Pictures)
+#### - 📝 **Blog Management** (Add Blogs, Show Blogs, Upload Blog Images)
+#### - 💬 **Comments** on Blogs
+#### - 📂 **Static Assets** handling (Profile Pics, Blog Images, SutraX Logo)
+#### - ⚡ Middleware-based **User Authentication**
+#### - 🖼️ EJS **templating engine** for dynamic views
+#### - 📌 Proper **404 - Not Found** handling
+#### - Password encryption using cryptography - for enhanced security
