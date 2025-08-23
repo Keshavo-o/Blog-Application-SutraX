@@ -13,4 +13,6 @@ There are a few things you need to keep in mind while uploading on AWS
 5.) You can also create a .env local file to give local variables there
      But you need to install a package to make it run : npm install dotenv
      And in app .js acquiring the package as : require("dotenv").config(); (ON TOP)
-6.) NOW GO TO console.aws.com and can proceed further
+6.) NOW GO TO console.aws.com and can proceed further:
+    You can use ELASTIC BEANSTALK as a beginner.
+7.) You have to create a cloud MOngoDB from MOngoDB official website.
