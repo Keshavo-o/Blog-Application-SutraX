@@ -90,6 +90,7 @@
       line-height: 1.8;
       color: #e6e6e6;
       white-space: pre-line;
+      margin-bottom: 2rem;
     }
 
     .btn-back {
@@ -110,6 +111,59 @@
       transform: scale(1.03);
       box-shadow: 0 4px 20px rgba(29,155,240,0.35);
     }
+
+    /* Comments Section */
+    .comments-section {
+      margin-top: 3rem;
+    }
+    .comment {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem 1.2rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .comment-author {
+      font-weight: 600;
+      color: #1D9BF0;
+    }
+    .comment-date {
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+    .comment-text {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Comment Form */
+    .comment-form {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.03);
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .comment-form textarea {
+      resize: none;
+      border-radius: 10px;
+    }
+    .btn-submit {
+      margin-top: 1rem;
+      background-color: #1D9BF0;
+      border: none;
+      border-radius: 10px;
+      padding: 0.6rem 1.2rem;
+      font-weight: 600;
+      color: #fff;
+      transition: 0.3s;
+    }
+    .btn-submit:hover {
+      background-color: #1a8cd8;
+      transform: scale(1.02);
+      box-shadow: 0 4px 15px rgba(29,155,240,0.35);
+    }
   </style>
 </head>
 <body>
@@ -124,35 +178,65 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-            <li class="nav-item">
-            <a class="nav-link" href="/blogs">Blogs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/userprofile">Profile</a>
-          </li>  
-          <li class="nav-item">
-            <a class="nav-link" href="/logout">Logout</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/blogs">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/userprofile">Profile</a></li>  
+          <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
   <!-- Blog Card -->
-   <%if(locals.blog) { %>
+  <% if(locals.blog) { %>
   <div class="glass-card">
-    <div class="blog-title"><%if(locals.blog) { %><%= blog.title %><% } %></div>
-    <div class="blog-meta">By <a target="_blank" href="/users/<%= blog.author %>"><%if(locals.blog) { %><%= blog.author %><% } %></a> | <%if(locals.blog) { %><%= new Date(blog.createdAt).toLocaleDateString() %><% } %></div>
+    <div class="blog-title"><%= blog.title %></div>
+    <div class="blog-meta">By 
+      <a target="_blank" href="/users/<%= blog.author %>"><%= blog.author %></a> | 
+      <%= new Date(blog.createdAt).toLocaleDateString() %>
+    </div>
+
     <% if(blog.image){ %>
       <img src="<%= blog.image %>" alt="Blog Image" class="blog-image">
     <% } %>
+
     <div class="blog-content"><%= blog.body %></div>
+
+    <!-- Comments Section -->
+    <div class="comments-section">
+      <h5>Comments</h5>
+      <% if (locals.comments && comments.length > 0) { %>
+        <% comments.forEach(comment => { %>
+          <div class="comment">
+            <div class="d-flex justify-content-between">
+              <span class="comment-author"><%= comment.author %></span>
+              <span class="comment-date"><%= comment.createdAt.toLocaleDateString() %></span>
+            </div>
+            <div class="comment-text"><%= comment.body %></div>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p class="text-muted">No comments yet. Be the first to comment!</p>
+      <% } %>
+
+      <!-- Comment Form -->
+      <form class="comment-form" method="POST" action="/post_comment">
+        <div class="mb-3">
+          <label for="postId" class="form-label">Sutra Id</label>
+          <input type="text" class="form-control" value="<%= blog._id %>" readonly id="postId" name="postId" required>
+        </div>
+        <div class="mb-3">
+          <label for="author" class="form-label">Your Name</label>
+          <input type="text" class="form-control" id="author" name="author" required>
+        </div>
+        <div class="mb-3">
+          <label for="text" class="form-label">Comment</label>
+          <textarea class="form-control" id="text" name="text" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Submit Comment</button>
+      </form>
+    </div>
 
     <a href="/" class="btn-back">Back to Home</a>
   </div>

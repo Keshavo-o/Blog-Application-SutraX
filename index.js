@@ -8,6 +8,7 @@ const signup_controller = require("./controllers/signup_controller.js");
 const staticRouter = require("./routes/staticRouter.js");
 const blogRouter = require("./routes/blog.js");
 const blogShowRouter = require("./routes/blogshow.js");
+const comment_router = require("./routes/post_comment.js");
 
 
 
@@ -58,7 +59,7 @@ app.use("/blogs", blogShowRouter);
 
 app.use("/", user_auth);
 
-
+app.use("/post_comment", comment_router);
 app.use("/", staticRouter);
 app.get('/*splat',(req,res)=>{
     res.render("not_found");
