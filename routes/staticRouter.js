@@ -5,6 +5,7 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const fs = require("fs");
+const blog = require("../models/blog_model.js");
 
 // Multer storage config
 const storage = multer.diskStorage({
@@ -43,8 +44,17 @@ async function attachUser(req, res, next) {
     next();
 }
 
-router.get("/", (req, res) => {
-    res.render("home");
+router.get("/", async (req, res) => {
+  try {
+    // Get a random sample of 5 blogs
+    const blogs = await blog.aggregate([{ $sample: { size: 10 } }]);
+
+    // Render home page and pass blogs
+    res.render("home", { blogs });
+  } catch (err) {
+    console.error("Error fetching blogs:", err);
+    res.render("home", { blogs: [] }); // fallback: empty array
+  }
 });
 
 router.get("/userprofile", attachUser, (req, res) => {
@@ -87,5 +97,12 @@ router.get("/settings", attachUser, async (req, res) => {
     }
     req.user = await user.findOne({ username: userData.username });
     res.render("settings", { user: req.user });
+});
+router.get("/about", (req, res) => {
+    res.render("about");
+});
+router.get("/users/:username/blogs", async (req, res) => {
+    const blogs = await blog.find({ author: req.params.username });
+    res.render("show_all_blogs", { blogs });
 });
 module.exports = router;

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About SutraX</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Serif+Devanagari:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #000;
+      color: #e6e6e6;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .navbar-brand {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #ffffff !important;
+      letter-spacing: 1px;
+    }
+    .nav-link {
+      font-weight: 500;
+      color: #e6e6e6 !important;
+      margin: 0 0.5rem;
+      transition: color 0.2s;
+    }
+    .nav-link:hover {
+      color: #1D9BF0 !important;
+    }
+
+    /* Glass Card */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      max-width: 900px;
+      margin: 12vh auto;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .sanskrit-logo {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: 2.2rem;
+      color: #1D9BF0;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 8px rgba(29,155,240,0.4);
+    }
+
+    .about-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .about-text {
+      font-size: 1rem;
+      color: #aaa;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .profile-img {
+      max-width: 150px;
+      border-radius: 50%;
+      border: 2px solid rgba(29,155,240,0.5);
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 20px rgba(29,155,240,0.4);
+    }
+
+    .social-links a {
+      color: #e6e6e6;
+      margin: 0 0.8rem;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+    .social-links a:hover {
+      color: #1D9BF0;
+    }
+
+    /* Button */
+    .btn-primary {
+      background-color: #1D9BF0;
+      border: none;
+      border-radius: 12px;
+      font-weight: 600;
+      padding: 0.8rem 1.2rem;
+      margin-top: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      background-color: #1a8cd8;
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(29,155,240,0.35);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">सूत्रX - SutraX</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/blogs">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/userprofile">Profile</a>
+          </li>  
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <div class="glass-card">
+    <img src="../IMAGES_FOR_DEVELOPER/2.png" alt="SutraX Logo" class="profile-img">
+    <div class="sanskrit-logo">About SutraX</div>
+    <!-- <div class="about-title">About SutraX</div> -->
+    <div class="about-text">
+      SutraX is a modern platform designed to bring clarity and minimalism to digital experiences. We combine thoughtful design with contemporary technology to create a smooth, engaging interface that is both elegant and functional.
+    </div>
+
+    <div class="about-title">Connect with Me</div>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/keshav-verma-3b0492255/" target="_blank" title="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#e6e6e6" class="bi bi-linkedin" viewBox="0 0 16 16">
+          <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zM4.943 13.401V6.845H2.542v6.556h2.401zm-1.2-7.515c.837 0 1.358-.554 1.358-1.247-.015-.708-.521-1.247-1.343-1.247-.823 0-1.357.539-1.357 1.247 0 .693.52 1.247 1.327 1.247h.015zM13.458 13.4v-3.598c0-1.92-1.026-2.812-2.398-2.812-1.11 0-1.602.61-1.882 1.04v-0.89H6.646c.03.588 0 6.556 0 6.556h2.401v-3.662c0-.195.014-.39.072-.53.158-.39.518-.793 1.122-.793.792 0 1.108.598 1.108 1.473v3.512h2.409z"/>
+        </svg>
+      </a>
+      <a href="https://github.com/Keshavo-o" target="_blank" title="GitHub">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#e6e6e6" class="bi bi-github" viewBox="0 0 16 16">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.074.547-.174.547-.386 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.074-2.695-1.074-.364-.924-.89-1.17-.89-1.17-.727-.497.055-.487.055-.487.803.056 1.225.824 1.225.824.714 1.223 1.872.87 2.33.665.072-.517.28-.87.508-1.07-1.777-.202-3.644-.888-3.644-3.95 0-.872.31-1.586.823-2.146-.083-.203-.357-1.018.078-2.12 0 0 .672-.215 2.2.82a7.66 7.66 0 0 1 2-.27c.68.003 1.36.092 2 .27 1.527-1.035 2.198-.82 2.198-.82.437 1.102.163 1.917.08 2.12.513.56.822 1.274.822 2.146 0 3.07-1.87 3.745-3.65 3.944.287.246.543.734.543 1.48 0 1.068-.01 1.93-.01 2.19 0 .214.144.462.55.384C13.71 14.53 16 11.54 16 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+      </a>
+    </div>
+
+    <a href="/" class="btn btn-primary btn-lg">Back to Home</a>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
