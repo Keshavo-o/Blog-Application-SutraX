@@ -4,6 +4,9 @@ SutraX is a **Blogging Application** built using **Node.js, Express, MongoDB, an
 It allows users to **sign up, log in, create blogs, comment, and upload profile/blog images**.  
 This project follows a **MVC (Model-View-Controller)** pattern with proper folder structuring.
 
+## Why the name - SutraX 😅?
+The name “SutraX” is inspired by the word “Sutra”, which in Sanskrit means a thread or guiding rule—something that connects ideas and knowledge together. Since this application is about blogging and sharing thoughts, it acts like a digital thread that ties together stories, experiences, and perspectives.
+
 ---
 
 ## Features
