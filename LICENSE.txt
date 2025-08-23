@@ -1,0 +1,6 @@
+Copyright (c) 2025 Keshav Verma
+
+All rights reserved.
+
+This source code and any associated files are the intellectual property of the author.  
+Unauthorized copying, modification, distribution, or use of this software, in whole or in part, is strictly prohibited without prior written permission from the author.
