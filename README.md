@@ -7,6 +7,15 @@ This project follows a **MVC (Model-View-Controller)** pattern with proper folde
 ## Why the name - SutraX 😅?
 The name “SutraX” is inspired by the word “Sutra”, which in Sanskrit means a thread or guiding rule—something that connects ideas and knowledge together. Since this application is about blogging and sharing thoughts, it acts like a digital thread that ties together stories, experiences, and perspectives.
 
+## This website is also uploaded on AWS servers with link : http://sutrax-bloggingplatoform-env.eba-66xrevjb.ap-south-1.elasticbeanstalk.com/
+<img width="1919" height="958" alt="image" src="https://github.com/user-attachments/assets/d0cd4a64-6cd8-4bda-96ab-bb624030b2d8" />
+(This link may not work in future due to certain restrictions from AWS servers and MOngo DB (online server)
+### AWS dashboard of this application:
+<img width="1900" height="895" alt="image" src="https://github.com/user-attachments/assets/48d1c877-d074-4a80-8df7-1953ac0c0582" />
+AWS service used : Elastic Beanstalk
+
+
+
 ---
 
 ## Features
