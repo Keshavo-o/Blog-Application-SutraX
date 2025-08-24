@@ -18,6 +18,9 @@ This website is also uploaded on AWS servers with link : http://sutrax-bloggingp
 
 ## AWS dashboard of this application:
 
+<img width="1900" height="895" alt="image" src="https://github.com/user-attachments/assets/85867f65-23dd-4b03-b1b8-49492b70cc82" />
+
+
 ### AWS service used : Elastic Beanstalk
 
 
