@@ -16,3 +16,7 @@ There are a few things you need to keep in mind while uploading on AWS
 6.) NOW GO TO console.aws.com and can proceed further:
     You can use ELASTIC BEANSTALK as a beginner.
 7.) You have to create a cloud MOngoDB from MOngoDB official website.
+8.) If you are using Mongo Online - just one thing to be remembered-
+    in home->network access->ip addresses you need to add IP addresses that can access the database>
+    You have to add 0.0.0.0/0 → This allows connections from any IP.(allows running on virtual machines)
+    You can delete this after you demonstrated your application deployment
