@@ -17,7 +17,6 @@ This website is also uploaded on AWS servers with link : http://sutrax-bloggingp
 ### There may be some difficulty loading this link on a mobile device due to the absence of SSL certificates, which can cause browsers to show security warnings or block certain features, preventing the site from functioning properly, until a valid SSL certificate is installed and the site is served over HTTPS.(SSL certification service is currently unavailable for free version of AWS)
 
 ## AWS dashboard of this application:
-<img width="1900" height="895" alt="image" src="https://github.com/user-attachments/assets/48d1c877-d074-4a80-8df7-1953ac0c0582" />
 
 ### AWS service used : Elastic Beanstalk
 
