@@ -13,7 +13,7 @@ This website is also uploaded on AWS servers with link : http://sutrax-bloggingp
 
 <img width="1919" height="958" alt="image" src="https://github.com/user-attachments/assets/d0cd4a64-6cd8-4bda-96ab-bb624030b2d8" />
 
-### (This link may not work in the future due to certain restrictions from AWS servers and MOngo DB (online server)
+### This link may not work in the future due to certain restrictions from AWS servers and MOngo DB (online server)
 ### There may be some difficulty loading this link on a mobile device due to the absence of SSL certificates, which can cause browsers to show security warnings or block certain features, preventing the site from functioning properly, until a valid SSL certificate is installed and the site is served over HTTPS.(SSL certification service is currently unavailable for free version of AWS)
 
 ## AWS dashboard of this application:
